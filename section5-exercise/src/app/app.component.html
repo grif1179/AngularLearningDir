@@ -1,0 +1,17 @@
+<div class="container content">
+    <div class="columns">
+        <div class="column">
+            <app-game-control (Ticks)="onTick($event)"></app-game-control>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column">
+            <h3>EVENS</h3>
+            <app-even *ngFor="let even of evens" [num]="even"></app-even>
+        </div>
+        <div class="column">
+            <h3>ODDS</h3>
+            <app-odd *ngFor="let odd of odds" [num]="odd"></app-odd>
+        </div>
+    </div>
+</div>
