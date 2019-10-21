@@ -1,17 +1,18 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'sort'
+  name: 'sort',
+  pure: false
 })
 export class SortPipe implements PipeTransform {
 
-  transform(value: any): any {
+  transform(value: any, prop: string): any {
     return value.slice().sort(
       (a, b) => {
-        if(a.name < b.name) {
+        if(a[prop] < b[prop]) {
           return -1;
         }
-        if (a.name > b.name) {
+        if (a[prop] > b[prop]) {
           return 1;
         }
 
